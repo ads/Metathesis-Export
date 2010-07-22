@@ -15,8 +15,8 @@
 		<thead>
 			<tr>
 				<th scope="col" style="width: 50%">Target</th>
-				<th scope="col">Source</th>
 				<th scope="col">Type</th>
+				<th scope="col">Source</th>
 				<th scope="col">Import/Export</th>
 			</tr>
 		</thead>
@@ -24,8 +24,8 @@
 		<tfoot>
 			<tr>
 				<th scope="col">Target</th>
-				<th scope="col">Source</th>
 				<th scope="col">Type</th>
+				<th scope="col">Source</th>
 				<th scope="col">Import/Export</th>
 			</tr>
 		</tfoot>
@@ -36,8 +36,8 @@
 					<?php echo $target['target']; ?>
 					<br /><small><?php echo $target['desc']; ?></small>
 				</td>
-				<td><?php echo $target['source']; ?></td>
 				<td><?php echo $target['type']; ?></td>
+				<td><?php echo $target['source']; ?></td>
 				<td>
 					<form action="" method="post" accept-charset="utf-8">
 						<?php wp_nonce_field('metathesis_nonce', 'metathesis_nonce', true, true ); ?> 

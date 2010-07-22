@@ -19,12 +19,12 @@ class Metathesis
 
 		if ( class_exists('Metathesis') ):
 			$targets[] = array(
-				'target' => 'CSV Export',
+				'target' => 'CSV File',
 				'type' => 'File',
 				'source' => 'Thesis Theme',
 				'class' => 'Metathesis',
-				'button' => 'Download Export File',
-				'desc' => 'Exports the raw metadata as a CSV file',
+				'button' => 'Download CSV File',
+				'desc' => 'Exports the Thesis SEO metadata as a CSV file',
 			);
 		endif;
 
