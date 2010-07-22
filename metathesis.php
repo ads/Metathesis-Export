@@ -8,7 +8,7 @@ Author: Eric Marden
 Author URI: http://xentek.net/ 
 */
 
-class Metathesis {
+class MetathesisPlugin {
 
 	public function __construct()
 	{
@@ -18,7 +18,7 @@ class Metathesis {
 	
 	public function admin_menu()
 	{
-		add_submenu_page('tools.php', 'Metathesis Export', 'Metathesis', 'export', 'metathesis-export', array( &$this, 'options' ) );
+		add_submenu_page( 'tools.php', 'Metathesis Export', 'Metathesis', 'export', 'metathesis-export', array( &$this, 'options' ) );
 	}
 	
 	public function options()
@@ -32,7 +32,7 @@ class Metathesis {
 			$metathesis = new $_POST['metathesis_class'];
 			$result = $metathesis->import();
 			if ( $result ) {
-				$this->render_message('Metasynthesis Complete.');
+				$this->render_message( 'Metasynthesis Complete.' );
 			}
 		endif;
 	}
@@ -40,7 +40,7 @@ class Metathesis {
 	static function targets()
 	{
 		$targets = array();
-		$targets = apply_filters('metathesis_get_targets',$targets);
+		$targets = apply_filters( 'metathesis_get_targets', $targets );
 		return $targets;
 	}
 	
@@ -85,8 +85,8 @@ class Metathesis {
 	}
 }
 
-include('lib/MetathesisImport.php');
-include('lib/AIOSEOP_MetathesisImport.php');
+include('lib/Metathesis.php');
+include('lib/AIOSEOP_Metathesis.php');
 
-$metathesis = new Metathesis();
+$metathesisplugin = new MetathesisPlugin();
 ?>

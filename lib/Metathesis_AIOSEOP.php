@@ -1,6 +1,8 @@
 <?php
-
-class AIOSEOP_MetathesisImport extends MetathesisImport
+/**
+ *	Metathesis: All in One SEO Pack Import/Export
+ */
+class Metathesis_AIOSEOP extends Metathesis
 {
 
 	static function target( $targets = array() )
@@ -10,13 +12,15 @@ class AIOSEOP_MetathesisImport extends MetathesisImport
 		
 		if ( class_exists( 'All_in_One_SEO_Pack' ) ):
 			$targets[] = array(
-				'name' => 'All in One SEO Pack',
+				'name' => 'All in One SEO Pack (Free)',
 				'type' => 'Plugin',
 				'class' => 'AIOSEOP_MetathesisImport',
 				'button' => 'Import Thesis Data',
-				'desc' => 'Imports the thesis metadata into the equivalent fields in All in One SEO Pack plugin.',
+				'desc' => 'Imports the thesis metadata into the equivalent fields in the free version of the All in One SEO Pack plugin.',
 			);
 		endif;
+
+		$targets = apply_filters( 'metathesis_target_aioseop', $targets );
 
 		return $targets;
 	}
@@ -24,6 +28,8 @@ class AIOSEOP_MetathesisImport extends MetathesisImport
 	public function import()
 	{
 		$data = $this->export();
+		$data = apply_filters( 'metathesis_import_aioseop', $data );
+		
 		foreach( $data as $post_id => $datum ):
 			extract( $datum );
 			update_post_meta( $post_id, '_aioseop_title', $thesis_title );
