@@ -13,6 +13,7 @@ class Metathesis {
 	public function __construct()
 	{
 		add_action( 'admin_menu', array( &$this, 'admin_menu' ) );
+		add_action( 'init', array( &$this, 'process' ) );
 	}
 	
 	public function admin_menu()
@@ -23,6 +24,15 @@ class Metathesis {
 	public function options()
 	{
 		$this->render('options');
+	}
+	
+	public function process()
+	{
+		if ( !empty( $_POST['metathesis_submit'] ) ):
+			$metathesis = new $_POST['metathesis_class'];
+			$result = $metathesis->import();
+			// krumo( $result );
+		endif;
 	}
 	
 	static function targets()

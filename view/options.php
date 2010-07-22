@@ -37,7 +37,7 @@
 				<td>
 					<form action="" method="post" accept-charset="utf-8">
 						<?php wp_nonce_field('metathesis_nonce', 'metathesis_nonce', true, true ); ?> 
-						<input type="hidden" name="class" value="<?php echo $target['class']; ?>" />
+						<input type="hidden" name="metathesis_class" value="<?php echo $target['class']; ?>" />
 						<input type="submit" name="metathesis_submit" value="<?php echo $target['button']; ?>" class="button" />
 					</form>
 				</td>

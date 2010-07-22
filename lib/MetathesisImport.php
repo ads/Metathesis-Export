@@ -33,19 +33,46 @@ class MetathesisImport
 	/**
 	 * This gets the thesis data and prepares it for this adaptor's target. Most subclasses shouldn't have to define this one unless they want to do something funky
 	 */
-	function export()
+	protected function export()
 	{
 		global $wpdb;
-		krumo($wpdb->postmeta);
-//		$wpdb->get_results("select post_id, meta_key, meta_value from wp_postmeta where meta_key = 'thesis_title' OR  meta_key = 'thesis_description' OR  meta_key = 'thesis_keywords' OR meta_key = 'thesis_noindex';");
+		$data = array();
+		
+		$posts = $wpdb->get_results("select post_id, meta_key, meta_value from {$wpdb->postmeta} where meta_key = 'thesis_title' OR  meta_key = 'thesis_description' OR  meta_key = 'thesis_keywords' OR meta_key = 'thesis_noindex';");
+		foreach( $posts as $post ):
+			$data[$post->post_id][$post->meta_key] = $post->meta_value;
+		endforeach;
+		return $data;
 	}
 	
 	/**
-	 *	This takes the prepared data and puts in the target location.
+	 *	This takes the prepared data and imports it into the target location. In this case its converted to CSV format,
+	 *	and pushed out to the users browser as a download.
+	 *	
+	 *	@return void This script returns output to the browser and exits the process.
 	 */
 	function import()
 	{
-		return 'doing import';
+		$data = $this->export();
+		$default = array('post_id' => '', 'thesis_title' => '', 'thesis_description' => '', 'thesis_keywords' => '', 'thesis_noindex' => 0);
+		
+		$export = fopen('php://temp/maxmemory:'. (5*1024*1024), 'r+');
+
+		fputcsv($export, array('post_id' => 'post_id', 'thesis_title' => 'title', 'thesis_description' => 'description', 'thesis_keywords' => 'keywords', 'thesis_noindex' => 'noindex') );
+		foreach($data as $id => $datum ):
+			$default['post_id'] = $id;
+			$datum = array_merge( $default, $datum );
+			extract( $datum );
+			fputcsv( $export, array( $post_id, $thesis_title, $thesis_description, $thesis_keywords, $thesis_noindex ) );
+		endforeach;
+		rewind( $export );
+		$csv = stream_get_contents( $export );
+		fclose( $export );
+		
+		header('Content-type: application/octet-stream');
+		header('Content-Disposition: attachment; filename="metathesis-export.csv"');
+		echo $csv;
+		exit();
 	}
 
 }
