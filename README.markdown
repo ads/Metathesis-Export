@@ -32,14 +32,12 @@ The project is now hosted on [github.com](http://github.com/ads/Metathesis-Expor
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the directory of the stable readme.txt, so in this case, `/tags/4.3/screenshot-1.png` (or jpg, jpeg, gif)
-2. This is the second screen shot
+1.
 
 == Changelog ==
 
 = 0.1 =
-* init it
+init it
 
 == Upgrade Notice ==
 
@@ -48,9 +46,9 @@ This is the first version of the plugin.
 
 == License ==
 
-The WP Post Footer plugin was developed by Eric Marden on behalf of Robert Dempsey and Atlantic Dominion Solutions, LLC and is provided with out warranty under the GPLv2 License.
+The Metathesis Export plugin was developed by Eric Marden on behalf of Robert Dempsey and Atlantic Dominion Solutions, LLC and is provided with out warranty under the GPLv2 License.
 
-Copyright 2010  Robert Dempsey
+Copyright 2010 Robert Dempsey
 
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 
