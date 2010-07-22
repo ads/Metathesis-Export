@@ -17,7 +17,7 @@ class Metathesis_AIOSEOP extends Metathesis
 				'source' => 'Thesis Theme',
 				'class' => 'Metathesis_AIOSEOP',
 				'button' => 'Import Thesis Data',
-				'desc' => 'Imports the thesis metadata into the equivalent fields in the free version of the All in One SEO Pack plugin.',
+				'desc' => 'Imports the Thesis theme metadata into the equivalent fields in the free version of the All in One SEO Pack plugin.',
 			);
 		endif;
 

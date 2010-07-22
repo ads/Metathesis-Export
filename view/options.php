@@ -9,7 +9,7 @@
 <div class="wrap">
 	<div class="icon32" id="icon-metathesis"><br></div>
 	<h2>Metathesis</h2>
-	<p>Easily export the metadata stored in custom fields by the Thesis theme into other formats used by supported plugins and themes.</p>
+	<p>Migrate your SEO goodness and other meta-data from one theme or plugin to another WordPress theme or plugin.</p>
 	
 	<h3>Supported Plugins and Themes</h3>
 	
