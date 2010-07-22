@@ -2,10 +2,22 @@
 
 class AIOSEOP_MetathesisImport extends MetathesisImport
 {
-	function __construct()
+
+	static function target($targets = array())
 	{
-		// do something here;
+		if ( !is_array($targets) )
+			$targets = array();
+		
+		if ( class_exists('All_in_One_SEO_Pack') ):
+			$targets[] = array(
+				'name' => 'All in One SEO Pack',
+				'type' => 'Plugin',
+				'class' => 'AIOSEOP_MetathesisImport'
+			);
+		endif;
+
+		return $targets;
 	}
 }
-
+add_filter('metathesis_get_targets', array( 'AIOSEOP_MetathesisImport', 'target' ) );
 ?>

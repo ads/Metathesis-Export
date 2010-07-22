@@ -28,15 +28,7 @@ class Metathesis {
 	static function getTargets()
 	{
 		$targets = array();
-		if ( class_exists('All_in_One_SEO_Pack') && class_exists('AIOSEOP_MetathesisImport') )
-		{
-			$targets[] = array(
-				'name' => 'All in One SEO Pack',
-				'type' => 'Plugin',
-				'class' => 'AIOSEOP_MetathesisImport'
-			);
-		}
-		
+		$targets = apply_filters('metathesis_get_targets',$targets);
 		return $targets;
 	}
 	
@@ -83,10 +75,20 @@ class Metathesis {
 
 class MetathesisImport
 {
-	
-	function __construct()
+	static function target( $targets = array() )
 	{
-		// do something
+		if ( !is_array($targets) )
+			$targets = array();
+		
+		if ( class_exists('MetathesisImport') ):
+			$targets[] = array(
+				'name' => 'Raw Data',
+				'type' => 'File',
+				'class' => 'MetathesisImport'
+			);
+		endif;
+
+		return $targets;
 	}
 
 	function export()
@@ -100,7 +102,7 @@ class MetathesisImport
 	}
 
 }
-
+add_filter('metathesis_get_targets', array( 'MetathesisImport', 'target' ) );
 include('lib/AIOSEOP_MetathesisImport.php');
 
 $metathesis = new Metathesis();
