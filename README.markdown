@@ -6,11 +6,17 @@ Requires at least: 3.0
 Tested up to: 3.0
 Stable tag: trunk
  
-Migrate your SEO goodness and other meta-data from Thesis to another WordPress theme or plugin.
+Migrate your SEO goodness and other meta-data from one theme or plugin to another WordPress theme or plugin.
 
 == Description ==
 
-Easily export the metadata stored in custom fields by the Thesis theme into other formats used by compatible plugins. Provides an extensible system for adding additional export targets.
+Easily export the metadata stored by one plugin or theme to another plugin or theme. 
+
+Data Portability is important. Data Portability allows you to easily move from one system to another and take your content with you. Metathesis allows you to do just that.
+
+This plugin provides an easily extensible system for registering import and export sources. Out of the box it exports the Search Engine Optimized Title, Description, and Keywords data stored by the Thesis Theme a CSV file. It also ships with a second adapter to export the Thesis SEO data to the All in One SEO Pack plugin. 
+
+More adapters are planned, and new ones can be written very easily by extending the Metathesis class and registering your adaptor via a WordPress filter provided by Metathesis. (Documentation forthcoming).
 
 == Installation ==
 
@@ -32,17 +38,17 @@ The project is now hosted on [github.com](http://github.com/ads/Metathesis-Expor
 
 == Screenshots ==
 
-1.
+1. Metathesis Options Screen
 
 == Changelog ==
 
-= 0.1 =
+= 1.0 =
 
-init it
+Released!
 
 == Upgrade Notice ==
 
-= 0.1 =
+= 1.0 =
 
 This is the first version of the plugin.
 

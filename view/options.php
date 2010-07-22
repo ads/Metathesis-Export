@@ -16,27 +16,30 @@
 	<table cellspacing="0" class="widefat metathesis fixed">
 		<thead>
 			<tr>
-				<th scope="col">Target</th>
-				<th scope="col">Type</th>
+				<th scope="col" style="width: 50%">Target</th>
 				<th scope="col">Source</th>
-				<th scope="col">Import</th>
+				<th scope="col">Type</th>
+				<th scope="col">Import/Export</th>
 			</tr>
 		</thead>
 
 		<tfoot>
 			<tr>
 				<th scope="col">Target</th>
-				<th scope="col">Type</th>
 				<th scope="col">Source</th>
-				<th scope="col">Import</th>
+				<th scope="col">Type</th>
+				<th scope="col">Import/Export</th>
 			</tr>
 		</tfoot>
 		<tbody>
-			<?php foreach ( $targets as $target ): ?>
-			<tr>
-				<td><?php echo $target['target']; ?><br /><small><?php echo $target['desc']; ?></small></td>
-				<td><?php echo $target['type']; ?></td>
+			<?php $i = 0; foreach ( $targets as $target ): $class = ( $i % 2 ) ? 'class="alternate"' : ''; ?>
+			<tr <?php echo $class; ?>>
+				<td>
+					<?php echo $target['target']; ?>
+					<br /><small><?php echo $target['desc']; ?></small>
+				</td>
 				<td><?php echo $target['source']; ?></td>
+				<td><?php echo $target['type']; ?></td>
 				<td>
 					<form action="" method="post" accept-charset="utf-8">
 						<?php wp_nonce_field('metathesis_nonce', 'metathesis_nonce', true, true ); ?> 
@@ -45,8 +48,7 @@
 					</form>
 				</td>
 			</tr>
-			<?php endforeach; ?>
+			<?php $i++; endforeach; ?>
 		</tbody>
 	</table>
-	
 </div>

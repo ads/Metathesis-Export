@@ -91,6 +91,7 @@ class MetathesisPlugin {
 
 include('lib/Metathesis.php');
 include('lib/Metathesis_AIOSEOP.php');
+include('lib/Metathesis_Thesis.php');
 
 $metathesisplugin = new MetathesisPlugin();
 ?>
