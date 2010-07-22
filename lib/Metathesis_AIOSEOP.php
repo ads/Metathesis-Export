@@ -12,9 +12,10 @@ class Metathesis_AIOSEOP extends Metathesis
 		
 		if ( class_exists( 'All_in_One_SEO_Pack' ) ):
 			$targets[] = array(
-				'name' => 'All in One SEO Pack (Free)',
+				'target' => 'All in One SEO Pack (Free)',
 				'type' => 'Plugin',
-				'class' => 'AIOSEOP_MetathesisImport',
+				'source' => 'Thesis Theme',
+				'class' => 'Metathesis_AIOSEOP',
 				'button' => 'Import Thesis Data',
 				'desc' => 'Imports the thesis metadata into the equivalent fields in the free version of the All in One SEO Pack plugin.',
 			);
@@ -40,5 +41,5 @@ class Metathesis_AIOSEOP extends Metathesis
 		return true;
 	}
 }
-add_filter( 'metathesis_get_targets', array( 'Metathesis_AIOSEOP', 'target' ) );
+add_filter( 'metathesis_targets', array( 'Metathesis_AIOSEOP', 'target' ) );
 ?>

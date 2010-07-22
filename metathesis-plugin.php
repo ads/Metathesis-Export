@@ -18,7 +18,7 @@ class MetathesisPlugin {
 	
 	public function admin_menu()
 	{
-		add_submenu_page( 'tools.php', 'Metathesis Export', 'Metathesis', 'export', 'metathesis-export', array( &$this, 'options' ) );
+		add_submenu_page( 'tools.php', 'Metathesis', 'Metathesis', 'export', 'metathesis', array( &$this, 'options' ) );
 	}
 	
 	public function options()
@@ -29,18 +29,22 @@ class MetathesisPlugin {
 	public function process()
 	{
 		if ( !empty( $_POST['metathesis_submit'] ) ):
-			$metathesis = new $_POST['metathesis_class'];
-			$result = $metathesis->import();
-			if ( $result ) {
-				$this->render_message( 'Metasynthesis Complete.' );
-			}
+			if ( class_exists( $_POST['metathesis_class'] ) ):
+				$metathesis = new $_POST['metathesis_class'];
+				$result = $metathesis->import();
+				if ( $result ):
+					$this->render_message( 'Metasynthesis Complete.' );
+				endif;
+			else:
+				$this->render_error( $_POST['metathesis_class'] . ' class does not exist.' );
+			endif;
 		endif;
 	}
 	
 	static function targets()
 	{
 		$targets = array();
-		$targets = apply_filters( 'metathesis_get_targets', $targets );
+		$targets = apply_filters( 'metathesis_targets', $targets );
 		return $targets;
 	}
 	
@@ -86,7 +90,7 @@ class MetathesisPlugin {
 }
 
 include('lib/Metathesis.php');
-include('lib/AIOSEOP_Metathesis.php');
+include('lib/Metathesis_AIOSEOP.php');
 
 $metathesisplugin = new MetathesisPlugin();
 ?>

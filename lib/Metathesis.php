@@ -19,9 +19,10 @@ class Metathesis
 
 		if ( class_exists('Metathesis') ):
 			$targets[] = array(
-				'name' => 'Raw Data',
+				'target' => 'CSV Export',
 				'type' => 'File',
-				'class' => 'MetathesisImport',
+				'source' => 'Thesis Theme',
+				'class' => 'Metathesis',
 				'button' => 'Download Export File',
 				'desc' => 'Exports the raw metadata as a CSV file',
 			);
@@ -59,7 +60,7 @@ class Metathesis
 		$data = $this->export();
 		$data = apply_filters( 'metathesis_import', $data );
 
-		$defaults = array('post_id' => '', 'thesis_title' => '', 'thesis_description' => '', 'thesis_keywords' => '', 'thesis_noindex' => 0);
+		$defaults = array('post_id' => '', 'thesis_title' => '', 'thesis_description' => '', 'thesis_keywords' => '', 'thesis_noindex' => '');
 		$defaults = apply_filters( 'metathesis_import_defaults', $data );		
 		
 		$export = fopen( 'php://temp/maxmemory:' . (5*1024*1024), 'r+' );
