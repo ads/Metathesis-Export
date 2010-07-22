@@ -20,6 +20,19 @@ class AIOSEOP_MetathesisImport extends MetathesisImport
 
 		return $targets;
 	}
+	
+	public function import()
+	{
+		$data = $this->export();
+		foreach( $data as $post_id => $datum ):
+			extract( $datum );
+			update_post_meta( $post_id, '_aioseop_title', $thesis_title );
+			update_post_meta( $post_id, '_aioseop_description', $thesis_description );
+			update_post_meta( $post_id, '_aioseop_keywords', $thesis_keywords );
+		endforeach;
+
+		return true;
+	}
 }
 add_filter( 'metathesis_get_targets', array( 'AIOSEOP_MetathesisImport', 'target' ) );
 ?>
