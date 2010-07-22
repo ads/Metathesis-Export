@@ -16,7 +16,7 @@ class Metathesis_AIOSEOP_CSV extends Metathesis
 				'target' => 'CSV File',
 				'type' => 'File',
 				'source' => 'All in One SEO Pack',
-				'class' => 'Metathesis',
+				'class' => 'Metathesis_AIOSEOP_CSV',
 				'button' => 'Download CSV File',
 				'desc' => 'Exports the All in One SEO metadata as a CSV file.',
 			);
