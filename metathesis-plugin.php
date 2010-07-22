@@ -1,23 +1,24 @@
 <?php
 /*
-Plugin Name: Metathesis Export
+Plugin Name: Metathesis
 Plugin URI: http://adsdevshop.com/products/
 Description: Easily export the metadata stored in custom fields by the Thesis theme into other formats used by compatible plugins. Provides an extensible system for adding additional export targets.
-Version: 0.1
+Version: 1.0
 Author: Eric Marden
 Author URI: http://xentek.net/ 
 */
 
-class Metathesis {
+class MetathesisPlugin {
 
 	public function __construct()
 	{
 		add_action( 'admin_menu', array( &$this, 'admin_menu' ) );
+		add_action( 'init', array( &$this, 'process' ) );
 	}
 	
 	public function admin_menu()
 	{
-		add_submenu_page('tools.php', 'Metathesis Export', 'Metathesis', $capability, 'metathesis-export', array( &$this, 'options_page'));
+		add_submenu_page( 'tools.php', 'Metathesis', 'Metathesis', 'export', 'metathesis', array( &$this, 'options' ) );
 	}
 	
 	public function options()
@@ -25,9 +26,31 @@ class Metathesis {
 		$this->render('options');
 	}
 	
+	public function process()
+	{
+		if ( !empty( $_POST['metathesis_submit'] ) ):
+			if ( class_exists( $_POST['metathesis_class'] ) ):
+				$metathesis = new $_POST['metathesis_class'];
+				$result = $metathesis->import();
+				if ( $result ):
+					$this->render_message( 'Metasynthesis Complete.' );
+				endif;
+			else:
+				$this->render_error( $_POST['metathesis_class'] . ' class does not exist.' );
+			endif;
+		endif;
+	}
+	
+	static function targets()
+	{
+		$targets = array();
+		$targets = apply_filters( 'metathesis_targets', $targets );
+		return $targets;
+	}
+	
 	protected function render($view, $args = array(), $ajax = false) 
 	{
-		extract($args)
+		extract( $args );
 
 		if ( $ajax ):
 			ob_start();
@@ -36,7 +59,7 @@ class Metathesis {
 		$file = rtrim(dirname( __FILE__ ), '/') . '/view/' . $view . '.php';
 		if ( file_exists( $file ) ):
 			include $file;
-		else
+		else:
 			echo '<pre>' . $file . ' not found.</pre>';
 		endif;
 
@@ -66,5 +89,9 @@ class Metathesis {
 	}
 }
 
-$metathesis = new Metathesis();
+include('adapters/Metathesis.php');
+include('adapters/Metathesis_AIOSEOP.php');
+include('adapters/Metathesis_Thesis.php');
+
+$metathesisplugin = new MetathesisPlugin();
 ?>
