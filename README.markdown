@@ -6,7 +6,7 @@ Requires at least: 3.0
 Tested up to: 3.0
 Stable tag: trunk
  
-Easily export the metadata stored in custom fields by the Thesis theme into other formats used by compatible plugins. Provides an extensible system for adding additional export targets.
+Migrate your SEO goodness and other meta-data from Thesis to another WordPress theme or plugin.
 
 == Description ==
 
@@ -37,11 +37,13 @@ The project is now hosted on [github.com](http://github.com/ads/Metathesis-Expor
 == Changelog ==
 
 = 0.1 =
+
 init it
 
 == Upgrade Notice ==
 
 = 0.1 =
+
 This is the first version of the plugin.
 
 == License ==
