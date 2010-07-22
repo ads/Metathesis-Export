@@ -40,5 +40,5 @@ class Metathesis_AIOSEOP extends Metathesis
 		return true;
 	}
 }
-add_filter( 'metathesis_get_targets', array( 'AIOSEOP_MetathesisImport', 'target' ) );
+add_filter( 'metathesis_get_targets', array( 'Metathesis_AIOSEOP', 'target' ) );
 ?>

@@ -2,7 +2,7 @@
 /**
  *	Metathesis Import/Export Base Class
  */
-class MetathesisImport
+class Metathesis
 {
 	/**
 	 *	Modifies the $targets array with the metathesis_get_targets filter
@@ -17,7 +17,7 @@ class MetathesisImport
 
 		$targets = apply_filters( 'metathesis_target', $targets );
 
-		if ( class_exists('MetathesisImport') ):
+		if ( class_exists('Metathesis') ):
 			$targets[] = array(
 				'name' => 'Raw Data',
 				'type' => 'File',
