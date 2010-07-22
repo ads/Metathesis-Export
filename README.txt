@@ -22,13 +22,17 @@ More adapters are planned, and new ones can be written very easily by extending 
 
 1. Download the metathesis-export.zip file, unzip and upload the whole directory to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress.
-1. Visit the Plugin's Control Panel under Tools and follow the onscreen instructions.
+1. Visit the Metathesis panel under the Tools submenu and follow the onscreen instructions.
 
 == Frequently Asked Questions ==
 
 = Why Would I Want This? =
 
 Your metadata should be portable to other plugins or themes (or even systems). This plugin helps you do just that.
+
+= I need help creating my own adaptor. =
+
+Documentation will be forthcoming, but take a look at one of the classes in the adaptors folder.
 
 = I want to help with development of this Plugin! =
 
@@ -38,9 +42,13 @@ The project is now hosted on [github.com](http://github.com/ads/Metathesis-Expor
 
 == Screenshots ==
 
-1. Metathesis Options Screen
+1. Metathesis Panel under the Tools Submenu
 
 == Changelog ==
+
+= 1.1 =
+
+Added new Adaptor. All in One SEO export to CSV. General code clean up and formatting. New Screenshot.
 
 = 1.0.2 =
 
@@ -52,9 +60,9 @@ Released!
 
 == Upgrade Notice ==
 
-= 1.0.2 =
+= 1.1 =
 
-Corrected ReadMe file.
+Added new Adaptor: All in One SEO export to CSV.
 
 == License ==
 
