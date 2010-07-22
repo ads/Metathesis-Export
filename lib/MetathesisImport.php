@@ -32,7 +32,8 @@ class MetathesisImport
 	function export()
 	{
 		global $wpdb;
-		return "getting source docs";
+		krumo($wpdb->postmeta);
+//		$wpdb->get_results("select post_id, meta_key, meta_value from wp_postmeta where meta_key = 'thesis_title' OR  meta_key = 'thesis_description' OR  meta_key = 'thesis_keywords' OR meta_key = 'thesis_noindex';");
 	}
 	
 	/**
