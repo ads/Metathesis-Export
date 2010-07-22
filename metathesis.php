@@ -73,36 +73,7 @@ class Metathesis {
 	}
 }
 
-class MetathesisImport
-{
-	static function target( $targets = array() )
-	{
-		if ( !is_array($targets) )
-			$targets = array();
-		
-		if ( class_exists('MetathesisImport') ):
-			$targets[] = array(
-				'name' => 'Raw Data',
-				'type' => 'File',
-				'class' => 'MetathesisImport'
-			);
-		endif;
-
-		return $targets;
-	}
-
-	function export()
-	{
-		return "getting source docs";
-	}
-	
-	function import()
-	{
-		return 'doing import';
-	}
-
-}
-add_filter('metathesis_get_targets', array( 'MetathesisImport', 'target' ) );
+include('lib/MetathesisImport.php');
 include('lib/AIOSEOP_MetathesisImport.php');
 
 $metathesis = new Metathesis();
