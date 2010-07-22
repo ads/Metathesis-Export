@@ -25,7 +25,7 @@ class Metathesis {
 		$this->render('options');
 	}
 	
-	static function getTargets()
+	static function targets()
 	{
 		$targets = array();
 		$targets = apply_filters('metathesis_get_targets',$targets);

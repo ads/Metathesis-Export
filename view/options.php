@@ -1,5 +1,5 @@
 <?php
-	$targets = Metathesis::getTargets();
+	$targets = Metathesis::targets();
 ?>
 <style type="text/css" media="screen">
 	#icon-metathesis {
@@ -32,9 +32,15 @@
 		<tbody>
 			<?php foreach ( $targets as $target ): ?>
 			<tr>
-				<td><?php echo $target['name']; ?></td>
+				<td><?php echo $target['name']; ?><br /><small><?php echo $target['desc']; ?></small></td>
 				<td><?php echo $target['type']; ?></td>
-				<td><?php echo $target['class']; ?></td>
+				<td>
+					<form action="" method="post" accept-charset="utf-8">
+						<?php wp_nonce_field('metathesis_nonce', 'metathesis_nonce', true, true ); ?> 
+						<input type="hidden" name="class" value="<?php echo $target['class']; ?>" />
+						<input type="submit" name="metathesis_submit" value="<?php echo $target['button']; ?>" class="button" />
+					</form>
+				</td>
 			</tr>
 			<?php endforeach; ?>
 		</tbody>

@@ -4,6 +4,8 @@
  */
 class MetathesisImport
 {
+	
+	
 	/**
 	 *	Modifies the $targets array with the metathesis_get_targets filter
 	 *
@@ -19,7 +21,9 @@ class MetathesisImport
 			$targets[] = array(
 				'name' => 'Raw Data',
 				'type' => 'File',
-				'class' => 'MetathesisImport'
+				'class' => 'MetathesisImport',
+				'button' => 'Download Export File',
+				'desc' => 'Exports the raw metadata as a CSV file',
 			);
 		endif;
 
