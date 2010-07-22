@@ -90,6 +90,7 @@ class MetathesisPlugin {
 }
 
 include('adapters/Metathesis.php');
+include('adapters/Metathesis_AIOSEOP_CSV.php');
 include('adapters/Metathesis_AIOSEOP.php');
 include('adapters/Metathesis_Thesis.php');
 
