@@ -14,7 +14,7 @@ class Metathesis_Thesis extends Metathesis
 			$targets[] = array(
 				'target' => 'Thesis',
 				'type' => 'Theme',
-				'source' => 'All in One SEO Pack (Free) plugin',
+				'source' => 'All in One SEO Pack plugin',
 				'class' => 'Metathesis_Thesis',
 				'button' => 'Import AIOSEOP Data',
 				'desc' => 'Imports the All in One SEO Pack plugin metadata into the equivalent fields in the Thesis Theme.',

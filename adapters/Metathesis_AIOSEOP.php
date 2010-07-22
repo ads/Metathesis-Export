@@ -12,7 +12,7 @@ class Metathesis_AIOSEOP extends Metathesis
 		
 		if ( class_exists( 'All_in_One_SEO_Pack' ) ):
 			$targets[] = array(
-				'target' => 'All in One SEO Pack (Free)',
+				'target' => 'All in One SEO Pack',
 				'type' => 'Plugin',
 				'source' => 'Thesis Theme',
 				'class' => 'Metathesis_AIOSEOP',

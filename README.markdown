@@ -14,7 +14,7 @@ Easily export the metadata stored by one plugin or theme to another plugin or th
 
 Data Portability is important. Data Portability allows you to easily move from one system to another and take your content with you. Metathesis allows you to do just that.
 
-This plugin provides an easily extensible system for registering import and export sources. Out of the box it exports the Search Engine Optimized Title, Description, and Keywords data stored by the Thesis Theme a CSV file. It also ships with a second adapter to export the Thesis SEO data to the All in One SEO Pack plugin. 
+This plugin provides an easily extensible system for registering import and export sources. Out of the box it exports the Search Engine Optimized Title, Description, and Keywords data stored by the Thesis Theme a CSV file. It also ships with a second and third adapter to export the Thesis SEO data to the All in One SEO Pack plugin and vice versa. 
 
 More adapters are planned, and new ones can be written very easily by extending the Metathesis class and registering your adaptor via a WordPress filter provided by Metathesis. (Documentation forthcoming).
 
