@@ -1,6 +1,4 @@
-<?php
-	$targets = MetathesisPlugin::targets();
-?>
+<?php $targets = MetathesisPlugin::targets(); ?>
 <style type="text/css" media="screen">
 	#icon-metathesis {
 		background: url("<?php echo plugin_dir_url(__FILE__); ?>img/backyard-view_32.png") no-repeat center center;

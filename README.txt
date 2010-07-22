@@ -1,4 +1,4 @@
-=== Metathesis Export ===
+=== Metathesis ===
 
 Contributors: xenlab,adsdevshop
 Tags: postmeta, custom fields, seo, thesis, export, data
@@ -42,19 +42,23 @@ The project is now hosted on [github.com](http://github.com/ads/Metathesis-Expor
 
 == Changelog ==
 
+= 1.0.2 =
+
+Tweaking the readme and ensuring we get a clean build of the software on WordPress.org
+
 = 1.0 =
 
 Released!
 
 == Upgrade Notice ==
 
-= 1.0 =
+= 1.0.2 =
 
-This is the first version of the plugin.
+Corrected ReadMe file.
 
 == License ==
 
-The Metathesis Export plugin was developed by Eric Marden on behalf of Robert Dempsey and Atlantic Dominion Solutions, LLC and is provided with out warranty under the GPLv2 License.
+The Metathesis plugin was developed by Eric Marden on behalf of Robert Dempsey and Atlantic Dominion Solutions, LLC and is provided with out warranty under the GPLv2 License.
 
 Copyright 2010 Robert Dempsey
 
