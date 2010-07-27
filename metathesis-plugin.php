@@ -3,9 +3,9 @@
 Plugin Name: Metathesis
 Plugin URI: http://adsdevshop.com/products/
 Description: Easily export the metadata stored in custom fields by the Thesis theme into other formats used by compatible plugins. Provides an extensible system for adding additional export targets.
-Version: 1.1
-Author: Eric Marden
-Author URI: http://xentek.net/ 
+Version: 1.1.1
+Author: Atlantic Dominion Solutions
+Author URI: http://adsdevshop.com/
 */
 
 class MetathesisPlugin {

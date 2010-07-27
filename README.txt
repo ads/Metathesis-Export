@@ -46,6 +46,10 @@ The project is now hosted on [github.com](http://github.com/ads/Metathesis-Expor
 
 == Changelog ==
 
+= 1.1.1 =
+
+Internal Housekeeping.
+
 = 1.1 =
 
 Added new Adaptor. All in One SEO export to CSV. General code clean up and formatting. New Screenshot.
@@ -60,9 +64,9 @@ Released!
 
 == Upgrade Notice ==
 
-= 1.1 =
+= 1.1.1 =
 
-Added new Adaptor: All in One SEO export to CSV.
+Internal Housekeeping.
 
 == License ==
 
